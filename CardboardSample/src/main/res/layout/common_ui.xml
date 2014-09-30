@@ -20,4 +20,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
 
+    <com.google.vrtoolkit.cardboard.samples.treasurehunt.CardboardCrosshairOverlayView
+        android:id="@+id/crosshair_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
 </RelativeLayout>

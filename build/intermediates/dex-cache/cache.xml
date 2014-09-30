@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="G:\Git\cardboard\CardboardSample\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-ebfa6a5908f849b8ebf1cc3b5e5661e56e8cb66e.jar"
+        jar="G:\Android Studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="G:\Git\cardboard\CardboardSample\build\intermediates\pre-dexed\debug\cardboard-7cfa5dfc7705acb6a4b95228686084892a3d7bab.jar"
+        jar="G:\Git\cardboard\CardboardSample\libs\cardboard.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7800973ef52ae629978ad974370b6a0b9bc79e25"/>
+    <item
+        dex="G:\Git\cardboard\CardboardSample\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-22d923921df5f3854989f481dbcdd48ae5f709d4.jar"
+        jar="G:\Git\cardboard\CardboardSample\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="G:\Git\cardboard\CardboardSample\build\intermediates\pre-dexed\debug\classes-039f19df16334557e263b027d40d75af514ce7b9.jar"
+        jar="G:\Git\cardboard\CardboardSample\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+
+</pre-dex-items>

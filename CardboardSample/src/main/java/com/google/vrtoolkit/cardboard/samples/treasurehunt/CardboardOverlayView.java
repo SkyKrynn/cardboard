@@ -117,6 +117,7 @@ public class CardboardOverlayView extends LinearLayout {
             imageView = new ImageView(context, attrs);
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             imageView.setAdjustViewBounds(true);  // Preserve aspect ratio.
+//            imageView.setImageResource(R.drawable.crosshair);
             addView(imageView);
 
             textView = new TextView(context, attrs);
