@@ -69,6 +69,9 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
     private CubeModel mCube;
     private CubeModel2 mCube2;
     private CubeModel2 mTarget;
+    private CubeModel2 mTargetColor;
+    private CubeModel2 mTargetColor2;
+    private CubeModel2 mTargetColor3;
     private CubeModel2 mMushroom;
 
     private int mPositionParam;
@@ -203,12 +206,41 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
         //mTarget.setAcceleration(0, -0.05f, 0);
         mTarget.setOrientation(90f, -1.0f, 0.0f, 0.0f);
 
+        mTargetColor = new CubeModel2(mGlProgram,
+                new ModelData(new DataBuffer(TargetPLY.COORDS, 3),
+                        new DataBuffer(TargetPLY.NORMALS, 3)),
+                new DataBuffer(TargetPLY.COLORS, 4));
+        mTargetColor.setPosition(3f, 2f, -2);
+        //mTargetColor.setVelocity(0, 0.0f, -0.05f);
+        //mTarget.setAcceleration(0, -0.05f, 0);
+        mTargetColor.setOrientation(90f, -1.0f, 0.0f, 0.0f);
+
+        mTargetColor2 = new CubeModel2(mGlProgram,
+                new ModelData(new DataBuffer(TargetPLY.COORDS, 3),
+                        new DataBuffer(TargetPLY.NORMALS, 3)),
+                new DataBuffer(TargetPLY.COLORS, 4));
+        mTargetColor2.setPosition(3f, 0f, -2);
+        //mTargetColor.setVelocity(0, 0.0f, -0.05f);
+        //mTarget.setAcceleration(0, -0.05f, 0);
+        mTargetColor2.setOrientation(90f, -1.0f, 0.0f, 0.0f);
+
+        mTargetColor3 = new CubeModel2(mGlProgram,
+                new ModelData(new DataBuffer(TargetPLY.COORDS, 3),
+                        new DataBuffer(TargetPLY.NORMALS, 3)),
+                new DataBuffer(TargetPLY.COLORS, 4));
+        mTargetColor3.setPosition(3f, -2f, -2);
+        //mTargetColor.setVelocity(0, 0.0f, -0.05f);
+        //mTarget.setAcceleration(0, -0.05f, 0);
+        mTargetColor3.setOrientation(90f, -1.0f, 0.0f, 0.0f);
+
+        /*
         mMushroom = new CubeModel2(mGlProgram,
                 new ModelData(new DataBuffer(MushroomModelData.COORDS, 3),
                         new DataBuffer(MushroomModelData.NORMALS, 3)),
                 new DataBuffer(MushroomModelData.COLORS, 4));
         mMushroom.setPosition(3f, 0f, mObjectDistance);
         mMushroom.setVelocity(0, 0.0f, -0.06f);
+        */
 
         GLES20.glEnable(GLES20.GL_DEPTH_TEST);
 
@@ -279,7 +311,10 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
 
         mCube2.update(TIME_DELTA);
         mTarget.update(TIME_DELTA);
-        mMushroom.update(TIME_DELTA);
+        mTargetColor.update(TIME_DELTA);
+        mTargetColor2.update(TIME_DELTA);
+        mTargetColor3.update(TIME_DELTA);
+        //mMushroom.update(TIME_DELTA);
 
         // Build the camera matrix and apply it to the ModelView.
         Matrix.setLookAtM(mCamera, 0, 0.0f, 0.0f, CAMERA_Z, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
@@ -333,8 +368,11 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
         Matrix.multiplyMM(mModelView, 0, mView, 0, mModelCube, 0);
         Matrix.multiplyMM(mModelViewProjection, 0, transform.getPerspective(), 0, mModelView, 0);
         mTarget.draw(transform, mView, mModelView, mModelViewProjection);
+        mTargetColor.draw(transform, mView, mModelView, mModelViewProjection);
+        mTargetColor2.draw(transform, mView, mModelView, mModelViewProjection);
+        mTargetColor3.draw(transform, mView, mModelView, mModelViewProjection);
 
-        mMushroom.draw(transform, mView, mModelView, mModelViewProjection);
+        //mMushroom.draw(transform, mView, mModelView, mModelViewProjection);
 
         // Set mModelView for the floor, so we draw floor in the correct location
         Matrix.multiplyMM(mModelView, 0, mView, 0, mModelFloor, 0);
@@ -498,3 +536,4 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
         return (Math.abs(pitch) < PITCH_LIMIT) && (Math.abs(yaw) < YAW_LIMIT);
     }
 }
+
